@@ -1,0 +1,88 @@
+<section class="py-section-gap px-margin-desktop max-w-container-max mx-auto" id="contact">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+        <div class="lg:col-span-5 space-y-8 mb-10 lg:mb-0">
+            <div>
+                <p class="font-label-sm text-label-sm text-secondary uppercase tracking-[0.3em] mb-2 font-bold">Consulta</p>
+                <h2 class="font-display-lg text-display-lg text-on-surface">Canal Seguro</h2>
+            </div>
+            <p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+                Nuestros expertos están disponibles para consultas confidenciales. Para consultas institucionales, utilice el formulario seguro a continuación o póngase en contacto con nuestra dirección regional.
+            </p>
+            <div class="space-y-4">
+                <div class="flex items-center gap-4 text-on-surface">
+                    <span class="material-symbols-outlined text-primary font-bold">location_on</span>
+                    <span class="font-body-md text-body-md font-semibold">Calle Torreon 167 C0l. Republica Oriente Saltillo, Coahuila Cp 25280</span>
+                </div>
+                <div class="flex items-center gap-4 text-on-surface">
+                    <span class="material-symbols-outlined text-primary font-bold">mail</span>
+                    <a href="mailto:contacto@hwconsultoria.com" class="font-body-md text-body-md font-semibold hover:underline">contacto@hwconsultoria.com</a>
+                </div>
+                <div class="flex items-center gap-4 text-on-surface">
+                    <span class="material-symbols-outlined text-primary font-bold">call</span>
+                    <a href="tel:+528444168806" class="font-body-md text-body-md font-semibold hover:underline">(844) 416 8806</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="lg:col-span-7 bg-surface-container-low p-8 md:p-12 rounded-lg border-2 border-outline-variant shadow-md">
+            <form id="contact-form" class="space-y-6">
+                
+                <div id="success-alert" class="hidden bg-white border-l-4 border-primary p-6 rounded-sm shadow-sm space-y-1 transition-all">
+                    <div class="flex items-center gap-2 text-primary">
+                        <span class="material-symbols-outlined font-bold text-xl">check_circle</span>
+                        <p class="font-body-md font-bold text-lg uppercase tracking-wider">Consulta Recibida</p>
+                    </div>
+                    <p class="font-body-md text-sm text-on-surface-variant pl-7">
+                        Gracias, nosotros nos ponemos en contacto contigo a la brevedad.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                        <label class="font-label-sm text-label-sm text-on-surface font-bold uppercase">Nombre Completo</label>
+                        <input required class="w-full bg-white border-2 border-outline-variant rounded-sm px-4 py-3 focus:border-primary focus:ring-0 transition-colors" placeholder="Nombre" type="text" />
+                    </div>
+                    <div class="space-y-2">
+                        <label class="font-label-sm text-label-sm text-on-surface font-bold uppercase">Correo Corporativo</label>
+                        <input required class="w-full bg-white border-2 border-outline-variant rounded-sm px-4 py-3 focus:border-primary focus:ring-0 transition-colors" placeholder="nombre@corporacion.com" type="email" />
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <label class="font-label-sm text-label-sm text-on-surface font-bold uppercase">Tipo de Consulta</label>
+                    <select required class="w-full bg-white border-2 border-outline-variant rounded-sm px-4 py-3 focus:border-primary focus:ring-0 transition-colors">
+                        <option value="">Seleccione una División</option>
+                        <option>Contabilidad y Auditoría</option>
+                        <option>Servicios de Ingeniería</option>
+                        <option>Servicios Científicos y Técnicos</option>
+                    </select>
+                </div>
+                <div class="space-y-2">
+                    <label class="font-label-sm text-label-sm text-on-surface font-bold uppercase">Resumen Estratégico</label>
+                    <textarea required class="w-full bg-white border-2 border-outline-variant rounded-sm px-4 py-3 focus:border-primary focus:ring-0 transition-colors" placeholder="Proporcione un breve contexto de su requerimiento..." rows="4"></textarea>
+                </div>
+                <button class="w-full bg-on-surface text-white py-5 rounded font-label-sm text-label-sm uppercase tracking-widest hover:bg-primary transition-colors font-bold shadow-lg" type="submit">
+                    Enviar
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<script>
+    const form = document.getElementById('contact-form') as HTMLFormElement | null;
+    const alertBox = document.getElementById('success-alert');
+
+    if (form && alertBox) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            alertBox.classList.remove('hidden');
+
+            form.reset();
+
+            setTimeout(() => {
+                alertBox.classList.add('hidden');
+            }, 9000);
+        });
+    }
+</script>
